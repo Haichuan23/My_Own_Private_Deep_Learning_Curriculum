@@ -1,5 +1,9 @@
 # Chapter 1: Transformer
 
+Prerequisite:
+1. Luis Serrano, A friendly introduction to Recurrent Neural Networks <br>
+   https://www.youtube.com/watch?v=UNmqTiOnRfg
+
 Reading Materials:
 1. Attention is all you need: https://arxiv.org/pdf/1706.03762 <br>
 （video analysis: https://www.bilibili.com/video/BV1pu411o7BE/?spm_id_from=333.337.search-card.all.click&vd_source=75e16b30403690b6ad4ccdb9c2dbde46)
