@@ -1,8 +1,8 @@
 # Chapter 1: Transformer
 
 Prerequisite:
-1. Luis Serrano, A friendly introduction to Recurrent Neural Networks <br>
-   https://www.youtube.com/watch?v=UNmqTiOnRfg
+1. Any online RNN tutorial would work. <br>
+Textbook see chapter 10 of deep learning:https://www.deeplearningbook.org/<br>
 
 Reading Materials:
 1. Attention Blog post <br>
