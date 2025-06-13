@@ -19,3 +19,7 @@ Practical Implementation:
  
  Solution to Deep Learning Curriculum Chapter 1:
  
+
+# Chapter 2: Tokenization, Bert, viT
+
+
