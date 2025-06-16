@@ -26,12 +26,27 @@ Implement a decoder-only transformer language model.
 
 Here are some first principle questions to answer:
 1. What is different architecturally from the Transformer, vs a normal RNN, like an LSTM? (Specifically, how are recurrence and time managed?)
+## Solution:
+RNN does have an attention mechanism. In RNN, a token gets its understanding of the context solely by hidden state computation, but that information does not distinguish between other tokens in the context (aka, a token cannot attend to other tokens which are more relevant to itself).
+We distinguish between encoder and decoder in the transformer. In the encoder, you can attend to the entire context. So for a token at t_th index, it can attend to tokens at place t+1, for example. However, in the decoder transformer, you can only attend to tokens before you (because you produce the token one by one, so you don’t have access to future tokens). This is more similar to RNN in terms of how time is managed. 
 
 2. Attention is defined as, Attention(Q,K,V) = softmax(QK^T/sqrt(d_k))V. What are the dimensions for Q, K, and V? Why do we use this setup? What other combinations could we do with (Q,K) that also output weights?
+## Solution:
+Let B be the batch dimension, T be the context window length, C_1 be the embedding dimension of tokens (specified by your embedding algorithm), C_2 be the embedding dimension specified by the model (d_model / d_head)
+
+Q: (B, T, C_2)
+K: (B, T, C_2)
+V: (B, T, C_2)
 
 3. Are the dense layers different at each multi-head attention block? Why or why not?
 
+Clarification: Dense layer is the fully connected layer. Say for attention block i, the dense layer for Q should be W_Q_{i}. 
+Their dimensionalities are the same, but their parameters should be different. Intuitively, each head will take different roles, so they will have different parameters. 
+
+
 4. Why do we have so many skip connections, especially connecting the input of an attention function to the output? Intuitively, what if we didn't?
+
+We are training deep neural networks, so skip connections are added to prevent gradients from becoming zero. If we don’t have a skip connection, then it’s possible that the model sees little improvement because the gradient is too small.
 
 
 5. Now we'll actually implement the code. Make sure each of these is completely correct - it's very easy to get the small details wrong.
