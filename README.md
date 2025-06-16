@@ -1,6 +1,6 @@
 # Solution_DL_Curriculum
-Chapter 1: Solution to Deep Learning Curriculum, Foundations of LLM (Summer 2025)
+Section 1: Solution to Deep Learning Curriculum, Foundations of LLM (Summer 2025)
 
-Chapter 2: AI Alignment
+Section 2: AI Alignment
 
-Chapter 3: Diffusion Model and Flow Matching
+Section 3: Diffusion Model and Flow Matching
