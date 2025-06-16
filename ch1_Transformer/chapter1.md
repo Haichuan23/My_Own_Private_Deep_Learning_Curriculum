@@ -31,7 +31,7 @@ What is different architecturally from the Transformer, vs a normal RNN, like an
 RNN does have an attention mechanism. In RNN, a token gets its understanding of the context solely by hidden state computation, but that information does not distinguish between other tokens in the context (aka, a token cannot attend to other tokens which are more relevant to itself).
 We distinguish between encoder and decoder in the transformer. In the encoder, you can attend to the entire context. So for a token at t_th index, it can attend to tokens at place t+1, for example. However, in the decoder transformer, you can only attend to tokens before you (because you produce the token one by one, so you don’t have access to future tokens). This is more similar to RNN in terms of how time is managed. 
 
-##Q2. 
+## Q2. 
 Attention is defined as, Attention(Q,K,V) = softmax(QK^T/sqrt(d_k))V. What are the dimensions for Q, K, and V? Why do we use this setup? What other combinations could we do with (Q,K) that also output weights?
 ### Solution:
 Let B be the batch dimension, T be the context window length, C_1 be the embedding dimension of tokens (specified by your embedding algorithm), C_2 be the embedding dimension specified by the model (d_model / d_head)
