@@ -18,6 +18,9 @@ Practical Implementation:
  https://www.youtube.com/watch?v=kCc8FmEb1nY&t=6067s
  
 # Solution to Deep Learning Curriculum Chapter 1:
+Other people's solution can be seen at:
+1. https://github.com/MatthewBaggins/deep_learning_curriculum/blob/master/1-Transformers.md
+2. https://github.com/jpdonasolo/Deep-Learning-Curriculum/blob/main/transformers/transformers.ipynb
  
 Implement a decoder-only transformer language model.
 
