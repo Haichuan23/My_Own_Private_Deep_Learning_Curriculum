@@ -54,7 +54,8 @@ Why do we have so many skip connections, especially connecting the input of an a
 We are training deep neural networks, so skip connections are added to prevent gradients from becoming zero. If we don’t have a skip connection, then it’s possible that the model sees little improvement because the gradient is too small.
 
 
-5. Now we'll actually implement the code. Make sure each of these is completely correct - it's very easy to get the small details wrong.
+## Q5. Implementation
+Now we'll actually implement the code. Make sure each of these is completely correct - it's very easy to get the small details wrong.
 
 Implement the positional embedding function first.
 
