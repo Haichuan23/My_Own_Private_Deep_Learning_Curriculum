@@ -55,6 +55,12 @@ We are training deep neural networks, so skip connections are added to prevent g
 
 
 ## Q5. Implementation
+
+## Our implementation 
+https://colab.research.google.com/drive/1VHvAcJD8FwZLncf8y7gU44zqbrRObAIg?usp=sharing, following Andrej Karpathy's Let's build GPT from scratch video (https://www.youtube.com/watch?v=kCc8FmEb1nY&list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ&index=7&t=2299s) 
+
+
+
 Now we'll actually implement the code. Make sure each of these is completely correct - it's very easy to get the small details wrong.
 
 Implement the positional embedding function first.
