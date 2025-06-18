@@ -80,3 +80,5 @@ To check you have the attention mask set up correctly, train your model on a toy
 Finally, train your model on the complete works of William Shakespeare. Tokenize the corpus by splitting at word boundaries (re.split(r"\b", ...)). Make sure you don't use overlapping sequences as this can lead to overfitting.
 
 
+## Self Attention vs Cross Attention
+Self attention: Q = K = V = same input, it allows a sequence to attend to itself. It's used in both encoder and decoder layers of the Transformer. Cross Attention allows one sequence to attend to another sequence. 
