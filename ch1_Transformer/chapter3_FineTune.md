@@ -15,4 +15,4 @@ Instead of using 32 bits to represent float, we use only 4 bits. This lowers pre
 
 Implentation detail: LayerNorm's parameters are sensitive, so you should not freeze them during training and should be represented in their original precision (say float32). </br>
 
-During training and inference, the low precision quantised weight is read from the storage, temporarily converted to their precision translation, do the computation, and then discard the high precision translation. </br>
+During training and inference, the low precision quantised weight is read from the storage, temporarily converted to their high precision translation, do the computation, and then discard the high precision translation. </br>
