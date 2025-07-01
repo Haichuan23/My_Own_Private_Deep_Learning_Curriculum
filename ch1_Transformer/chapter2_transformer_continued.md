@@ -7,7 +7,7 @@ Andrej Karpathy Tutorial: https://www.youtube.com/watch?v=zduSFxRajkE&t=57s
 
 Some notes recommended by William Brown's Generative AI Handbook (Chapter 13): https://genai-handbook.github.io/
 
-Some key aspects of tokenization:
+Some key aspects of tokenization:</br>
 (1) A lot of errors can be traced back to tokenization, including GPT's different performance on different languages </br>
 (2) Words need to be represented as integers (typically utf-8 encoding) </br>
 (3) Use BPE (byte pair encoding) algorithm to encode the words, high frequency byte pairs are grouped together into a single token, the benefit of this is within the same context length, now the attention mechanism can see more text (more context, better learning) </br>
