@@ -21,7 +21,6 @@ During training and inference, the low precision quantised weight is read from t
 1. Get pairwise comparion data (for example, from hugging face/chatbot_arena, the data should contain a prompt, two responses, and a label indicating who is the winner)
 2. Filter the dataset, throw out prompts or responses that are too long (for memory and computation reasons)
 3. We split the filtered pairwise comparison data into train set and validation set. We should sort the validation set so that longer sequences appear first.
-</br>
 [
 For three reasons:</br>
 a. You should not sort the training dataset because this will break the iid assumption of training data, but validation is not for training so we can sort it.</br>
