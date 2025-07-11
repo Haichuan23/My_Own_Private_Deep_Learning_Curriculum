@@ -30,7 +30,7 @@ c. The largest sequence length in a batch determines the parameter for some matr
 4. We need to tokenize our dataset (combining text and two separate responses together) using the tokenizer provided in the dataset Library (https://huggingface.co/docs/datasets/index). The tokenizer will return two things: (1) input_ids (the integer that the text is mapped to) (2) attention mask: tell you which token is text and which token is padding. We also need to have the labels indicating which model wins or loses.
 5. Reward model is also a large transformer model, so it's computationally expensive and memory intensive to fine tune the reward model. Hence, we need to use LoRA and quantization (see BitsAndBytes). In the LoRa configurations, the three key parameters are: </br>
 [
-  a. r is the rank of the LORA matrix, so suppose your original matrix W is $d_{out} \times d_{in}$, then your modification matrix B can be $d_{out} \times r$, and matrix A can be $r \times d^{in}$, and the modification is $B \times A$ </br>
+  a. r is the rank of the LORA matrix, so suppose your original matrix W is $d_{out} \times d_{in}$, then your modification matrix B can be $d_{out} \times r$, and matrix A can be $r \times d_{in}$, and the modification is $B \times A$ </br>
   b. lora_alpha: This is a parameter controlling the strength of the LoRA update </br>
   c.  target_modules: This tells you which modules we would like to update, in the example, they change the weight to the q, k, v matrices in the attention mechanism </br>
 ]
