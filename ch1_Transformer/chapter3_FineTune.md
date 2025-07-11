@@ -21,12 +21,12 @@ During training and inference, the low precision quantised weight is read from t
 1. Get pairwise comparion data (for example, from hugging face/chatbot_arena, the data should contain a prompt, two responses, and a label indicating who is the winner)
 2. Filter the dataset, throw out prompts or responses that are too long (for memory and computation reasons)
 3. We split the filtered pairwise comparison data into train set and validation set. We should sort the validation set so that longer sequences appear first.
-  [
-  For three reasons:
-   a. You should not sort the training dataset because this will break the iid assumption of training data, but validation is not for training so we can sort it.
-   b. The reason why you want to sort is you want samples with similar length to appear in the same batch. Recall that every sequence needs to be padded to the same length as the longest sequence in the batch. So suppose you have one long   sequence (say 1000 tokens), and one short sequence (say 100 tokens), then the short sequence needs 900 padding, which is wasteful.
-   c. The largest sequence length in a batch determines the parameter for some matrices in the computation (say Q, K, V), so processing the larges sequence length first will make you encounter out of memory early on. You don't need to wait until the small ones that are already processed to encounter those errors.
-  ]
+[
+For three reasons:
+a. You should not sort the training dataset because this will break the iid assumption of training data, but validation is not for training so we can sort it.
+b. The reason why you want to sort is you want samples with similar length to appear in the same batch. Recall that every sequence needs to be padded to the same length as the longest sequence in the batch. So suppose you have one long   sequence (say 1000 tokens), and one short sequence (say 100 tokens), then the short sequence needs 900 padding, which is wasteful.
+c. The largest sequence length in a batch determines the parameter for some matrices in the computation (say Q, K, V), so processing the larges sequence length first will make you encounter out of memory early on. You don't need to wait until the small ones that are already processed to encounter those errors.
+]
 4. We need to tokenize our dataset (combining text and two separate responses together) using the tokenizer provided in the dataset Library (https://huggingface.co/docs/datasets/index). The tokenizer will return two things: (1) input_ids (the integer that the text is mapped to) (2) attention mask: tell you which token is text and which token is padding. We also need to have the labels indicating which model wins or loses.
 5. Reward model is also a large transformer model, so it's computationally expensive and memory intensive to fine tune the reward model. Hence, we need to use LoRA and quantization (see BitsAndBytes). We 
 
