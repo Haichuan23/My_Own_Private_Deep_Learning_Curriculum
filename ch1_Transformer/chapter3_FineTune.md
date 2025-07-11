@@ -20,7 +20,7 @@ During training and inference, the low precision quantised weight is read from t
 
 1. Get pairwise comparion data (for example, from hugging face/chatbot_arena, the data should contain a prompt, two responses, and a label indicating who is the winner)
 2. Filter the dataset, throw out prompts or responses that are too long (for memory and computation reasons)
-3. We split the filtered pairwise comparison data into train set and validation set. We should sort the validation set so that longer sequences appear first.
+3. We split the filtered pairwise comparison data into train set and validation set. We should sort the validation set so that longer sequences appear first.</br>
 [
 For three reasons:</br>
 a. You should not sort the training dataset because this will break the iid assumption of training data, but validation is not for training so we can sort it.</br>
@@ -30,11 +30,11 @@ c. The largest sequence length in a batch determines the parameter for some matr
 4. We need to tokenize our dataset (combining text and two separate responses together) using the tokenizer provided in the dataset Library (https://huggingface.co/docs/datasets/index). The tokenizer will return two things: (1) input_ids (the integer that the text is mapped to) (2) attention mask: tell you which token is text and which token is padding. We also need to have the labels indicating which model wins or loses.
 5. Reward model is also a large transformer model, so it's computationally expensive and memory intensive to fine tune the reward model. Hence, we need to use LoRA and quantization (see BitsAndBytes). In the LoRa configurations, the three key parameters are:
 [
-  a. r is the rank of the LORA matrix, so suppose your original matrix W is $d^out \times d^in$, then your modification matrix B can be $d_out \times r$, and matrix A can be $r \times d^in$, and the modification is $B \times A$ </br>
+  a. r is the rank of the LORA matrix, so suppose your original matrix W is $d_{out} \times d_{in}$, then your modification matrix B can be $d_{out} \times r$, and matrix A can be $r \times d^{in}$, and the modification is $B \times A$ </br>
   b. lora_alpha: This is a parameter controlling the strength of the LoRA update </br>
   c.  target_modules: This tells you which modules we would like to update, in the example, they change the weight to the q, k, v matrices in the attention mechanism </br>
 ]
-
+6. 
 
 
 
