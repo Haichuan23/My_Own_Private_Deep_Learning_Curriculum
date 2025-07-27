@@ -13,6 +13,10 @@ Implentation detail: LayerNorm's parameters are sensitive, so you should not fre
 
 During training and inference, the low precision quantised weight is read from the storage, temporarily converted to their high precision translation, do the computation, and then discard the high precision translation. </br>
 
+# SFT Pipeline
+
+## Steps to SFT a LLM 
+1. 
 
 # RLHF Pipeline
 
