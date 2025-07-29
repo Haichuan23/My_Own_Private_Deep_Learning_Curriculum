@@ -17,7 +17,7 @@ During training and inference, the low precision quantised weight is read from t
 
 ## Some terminology refresh:
 1. During training, training dataset is randomly shuffled and divided into batches. For each batch, the model will go through one forward and backward pass with parameter update. One epoch corresponds to the case that the model has seen through all data once.
-2. Per ChatGPT, most large scale LM "pretraining" runs aren't descirbed in terms of epochs because the training size is so large and it's hard to see all texts once. Instead, people use total tokens seen.
+2. Per ChatGPT, most large scale LM "pretraining" runs aren't descirbed in terms of epochs because the training size is so large and it's hard to see all texts once. Instead, people use total tokens seen as a metric. (GPT-2 (1.5B) is trained on roughly 52 billion tokens, LLaMA7B is trained on 1 trillion tokens, and GPT-3 (175B) is trained on roughly 300 billion tasks.)
 3. In SFT training, for a 1B model and small dataset (< 10K examples), typically 5-10 epochs are enough. Bigger model has higher capacity, so less epochs are required to train them. If you train too many epochs on bigger models, then the risk of overfitting increases.
 
 
