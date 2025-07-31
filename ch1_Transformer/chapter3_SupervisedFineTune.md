@@ -1,4 +1,4 @@
-# Chapter 3: Fine-Tuning
+# Chapter 3: Supervised Fine Tuning
 
 
 # LoRA:
