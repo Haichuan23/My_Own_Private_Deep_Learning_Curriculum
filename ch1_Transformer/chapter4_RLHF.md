@@ -58,4 +58,8 @@
    [Google Colab Notebook](https://colab.research.google.com/drive/1B4NPpZzKLBxdk_zMqp4MM4026-g0wr3J?usp=sharing)
 
 
+## Step 2: The implementation of the PPO Algorithm
+This is also the solution for Chapter 5 in deep learning curriculum. 
+
+
 
