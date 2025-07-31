@@ -36,15 +36,12 @@
    The reward model is a large transformer and expensive to train. Use **LoRA** and **quantization** (e.g., via [BitsAndBytes](https://github.com/TimDettmers/bitsandbytes)) to reduce memory and compute. Key LoRA parameters include:
 
    - **`r`**: the rank of the LoRA matrix  
-     Suppose the original weight matrix \( W \) is \( d_{\text{out}} \times d_{\text{in}} \).  
-     Then LoRA adds two smaller matrices:  
-     \( B: d_{\text{out}} \times r \) and \( A: r \times d_{\text{in}} \),  
-     and the LoRA modification is \( B \times A \).
+   Suppose your original matrix W is $d_{out} \times d_{in}$, then your modification matrix B can be $d_{out} \times r$, and matrix A can be $r \times d_{in}$, and the modification is $B \times A$
 
    - **`lora_alpha`**: scaling factor controlling the strength of the LoRA update
 
    - **`target_modules`**: which parts of the model are updated  
-     In the example, LoRA is applied to the **Q, K, V** matrices in the attention mechanism.
+     In the examoke, LoRA is applied to the **Q, K, V** matrices in the attention mechanism.
 
 6. **Train the reward model**  
    After downloading a public model:
