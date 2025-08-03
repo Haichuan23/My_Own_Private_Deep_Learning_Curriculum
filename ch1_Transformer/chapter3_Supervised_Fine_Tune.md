@@ -24,7 +24,7 @@ During training and inference, the low precision quantised weight is read from t
 ## Steps to SFT a LLM 
 1. 
 
-# RLHF Pipeline
+<!-- # RLHF Pipeline
 
 ## Step 1: Fine Tune a Reward model
 
@@ -52,7 +52,7 @@ c. The largest sequence length in a batch determines the parameter size for some
 6. We then start to train the reward model. After downloading a public model, we will read the hidden state of the last non-padding token in each batch (retrieved using attention mask from tokenizer), and train a linear classifier that predicts which model wins. We use cross-entroypy loss to train the reward model. For the details, please see HuggingFace Trainer API, data collator, LoRa adaptor </br>
 Some sample code for the final training pipeline: https://colab.research.google.com/drive/1B4NPpZzKLBxdk_zMqp4MM4026-g0wr3J?usp=sharing
 
-## Step 2: The implementation of the PPO Algorithm
+## Step 2: The implementation of the PPO Algorithm -->
 
 
 
