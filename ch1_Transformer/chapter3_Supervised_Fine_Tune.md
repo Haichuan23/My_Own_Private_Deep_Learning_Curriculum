@@ -22,7 +22,47 @@ During training and inference, the low precision quantised weight is read from t
 
 
 ## Steps to SFT a LLM 
-1. 
+1. Load the base model and tokenizer
+2. Load the Lora configuration
+3. Load the training data (in the format of message and anwswer)
+4. Set up the Trainer
+
+An example implementation: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!-- # RLHF Pipeline
 
