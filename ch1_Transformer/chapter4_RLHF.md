@@ -59,7 +59,7 @@
 
 
 ## Step 2: The implementation of the PPO Algorithm
-This is also the solution for Chapter 5 in deep learning curriculum. 
+This is also the solution for Chapter 5 in deep learning curriculum. Chapter 5 in this notebook is devoted to the PPO algorithm. 
 
 
 
