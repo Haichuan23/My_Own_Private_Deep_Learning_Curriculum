@@ -1,6 +1,6 @@
 # Section 1: AI Safety Glossary
 
-Model Spec: Document that outlines intended behaviors of a model, often follow different hierarchies, e.g., root > system > developer > user </br>
+Model Spec: Document that outlines intended behaviors of a model, often following a hierarchical structure, e.g., root > system > developer > user </br>
 Website: https://model-spec.openai.com/2025-09-12.html
 
 Sandbagging: Strategic underperformance on an evaluation </br>
